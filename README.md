@@ -9,7 +9,11 @@ O algoritmo consiste em pegar o link para o download, usar a biblioteca OS para 
 TO-DO:
 
 -> Refazer toda a página das funções que baixam, teve ajuda do GPT para testes, quero tudo sozinho agora que sei que funciona.
+
 -> Colocar um README de respeito e bilíngue.
+
 -> Revisar a licensa.
+
 -> Postar e dizer que é código aberto para contribuições.
+
 -> No futuro, pensar em um front-end por uma biblioteca simples do python.
