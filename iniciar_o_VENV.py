@@ -1,0 +1,1 @@
+# PAra não esquecer de iniciar o venv!!!!
