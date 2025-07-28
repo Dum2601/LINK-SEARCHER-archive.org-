@@ -1,5 +1,6 @@
 Finalizar o algoritmo e deixar ele público.
 Ele vai baixar o arquivo do URL que eu colocar do site https://archive.org/
+O seguinte livro está sendo usado para testes https://archive.org/details/AlamutVladimirBartol
 
 Até o momento, testei apenas o download com o torrent que está ok.
 Basicamente ele manda uma requisição para ver se está com o arquivo e depois, com um GET, pega o link do download.
