@@ -75,3 +75,22 @@ class Page:
             return None
 
 
+page = Page
+
+
+
+def main(page_link):
+    page = Page(page_link).download_link()
+    if page:
+        index = 0
+        link_arr = []
+        for link in page:
+            print(f'{index}: {link}')
+            index += 1
+            link_arr.append(link)
+        return link_arr
+    else:
+        return "No link found or error accessing the page!"
+    
+
+

@@ -27,13 +27,13 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
+from flask import Flask
+from URL_operations.routes import *
 
 
-
-from main_page_terminal.main_page_show import menu
+app = Flask(__name__)
 
 if __name__ == "__main__":
-    menu()
-
+    app.run(debug=True)
 
 
