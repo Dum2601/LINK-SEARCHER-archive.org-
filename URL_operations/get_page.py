@@ -1,4 +1,5 @@
 import requests
+import inspect
 
 class Page:
     def __init__(self, link):
@@ -31,20 +32,24 @@ class Page:
 
     def search_download_methods(self):
         # Verifica as opções de download após a checagem
-        print('Agora sim')
+        pass
 
-    @property
     def download_link(self):
+        # check conection status:
+        ## Testando, o que tiver de ocorrer ficar no que está certo, o que der errado ir para o False
+        if self.check_page():
+            return 'Deu certo'
+        elif self.check_page() == False:
+            return f'Deu errado na função {inspect.currentframe().f_code.co_name}() da classe {self.__class__.__name__}'
+
         
 
 
 # Checa no check page, se der True, chamar a de procurar downloads, se der errado, chamar a que concerta o link
 
 
-# page = Page('https://archive.org/details/AlamutVladimirBartol')
-# page = Page('https://archive.org/details/AlamutVladim')
+page = Page('https://archive.org/details/AlamutVladimirBartol').download_link()
+# page = Page('https://archive.org/details/AlamutVladim').download_link()
 
-if page.check_page() == True:
-    print('Deu fora da função')
-else:
-    print('Deu o erro certo')
+
+print(page)
