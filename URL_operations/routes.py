@@ -3,7 +3,6 @@ from get_page import main
 
 app = Flask(__name__)
 
-# Variável global para armazenar os últimos links obtidos
 download_links = []
 
 @app.route('/')
@@ -32,8 +31,4 @@ if __name__ == "__main__":
     
 
 
-
-    # Fluxo -> 
-    # Recebe o link OK
-    # Se for válido: lista os links OK
 
