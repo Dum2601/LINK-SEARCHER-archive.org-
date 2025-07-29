@@ -52,6 +52,9 @@ Planned improvements include:
 
 Feel free to open issues or submit pull requests!
 
+<img width="979" height="479" alt="image" src="https://github.com/user-attachments/assets/21735494-60bc-4c61-8617-74d005df0657" />
+
+
 ---
 
 ## **Português**
@@ -105,3 +108,6 @@ As próximas atualizações planejadas são:
 * **Transformar o projeto em uma API**
 
 Sinta-se livre para abrir *issues* ou enviar *pull requests*!
+
+<img width="979" height="479" alt="image" src="https://github.com/user-attachments/assets/037354bd-c0f5-4e22-9095-961957a5b2ce" />
+
