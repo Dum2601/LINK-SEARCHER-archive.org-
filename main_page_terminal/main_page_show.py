@@ -34,7 +34,7 @@ def menu():
         if choose == '1':
             archive_link = input("Paste an archive.org item page link here to search links to download: ")
             main(archive_link)
-            leave_choice = input('Do you want to return to Main Menu? Confirm: (Y/n): ')
+            leave_choice = input('Do you really want to leave now? Confirm: (Y/n): ')
             if not return_main_menu(leave_choice):
                 break
         
