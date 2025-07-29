@@ -29,10 +29,10 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 from flask import Flask
+from URL_operations.routes import routes_bp
 
 app = Flask(__name__)
-
-# import URL_operations.routes
+app.register_blueprint(routes_bp)
 
 if __name__ == "__main__":
     app.run(debug=True)

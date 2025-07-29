@@ -27,17 +27,22 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
-from flask import request, jsonify
+
+from flask import Blueprint, request, jsonify
 from URL_operations.get_page import main
-from main import app
+
+# Define o blueprint
+routes_bp = Blueprint('routes', __name__)
 
 download_links = []
 
-@app.route('/')
+
+@routes_bp.route('/')
 def health_check():
     return 'Funcionando'
 
-@app.route('/get_link_page', methods=['POST'])
+
+@routes_bp.route('/get_link_page', methods=['POST'])
 def get_page_link():
     data = request.get_json()
     if not data or 'link' not in data:
@@ -48,15 +53,7 @@ def get_page_link():
     download_links = main(link)
     return jsonify({"message": "Links obtained successfully", "links": download_links})
 
-@app.route('/list_links', methods=['GET'])
+
+@routes_bp.route('/list_links', methods=['GET'])
 def list_links():
     return jsonify({"links": download_links})
-
-    
-
-
-
-    
-
-
-
