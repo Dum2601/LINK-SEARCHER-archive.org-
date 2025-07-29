@@ -1,5 +1,4 @@
 import requests
-import inspect
 from bs4 import BeautifulSoup
 
 class Page:
