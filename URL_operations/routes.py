@@ -27,12 +27,9 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
-# from flask import Flask
-# from URL_operations.routes import *
-from flask import Flask, jsonify, request
-from get_page import main
-
-app = Flask(__name__)
+from flask import request, jsonify
+from URL_operations.get_page import main
+from main import app
 
 download_links = []
 
@@ -48,12 +45,13 @@ def get_page_link():
 
     link = data['link']
     global download_links
-    download_links = main(link)  # Pega os links da função main
+    download_links = main(link)
     return jsonify({"message": "Links obtained successfully", "links": download_links})
 
 @app.route('/list_links', methods=['GET'])
 def list_links():
     return jsonify({"links": download_links})
+
     
 
 

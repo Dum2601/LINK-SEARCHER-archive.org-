@@ -27,13 +27,13 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
-from flask import Flask
-from URL_operations.routes import *
 
+from flask import Flask
 
 app = Flask(__name__)
 
+# import URL_operations.routes
+
 if __name__ == "__main__":
     app.run(debug=True)
-
 
