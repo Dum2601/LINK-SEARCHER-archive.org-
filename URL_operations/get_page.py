@@ -21,7 +21,17 @@ class Page:
 
 
     def search_download_methods(self):
-        return self.soup.title.text
+        download_section = self.soup.find("section", class_="boxy item-download-options")
+
+        if download_section:
+            links = download_section.find_all("a", href=True)
+            
+            for link in links:
+                href = link["href"]
+                text = link.get_text(strip=True)
+                print(f"{text} -> {href}")
+        else:
+            print("Download Section not found.")
         
         
 
