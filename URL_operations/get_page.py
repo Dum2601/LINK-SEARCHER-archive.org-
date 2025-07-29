@@ -15,19 +15,7 @@ class Page:
         except requests.exceptions.RequestException as err:
             print('Error:',
                   f'\n{err}')
-            return False
-            
-            
-        
-    def fixing_link(self):
-        if self.check_page() == True:
-            self.search_download_methods(self) # Makes sure that the correct function is called (second verifing)
-            print('Was necessary verify twice in fixing_link() to go to correct function (search_download_methods())') # To know the function was not called in correct place
-
-        elif self.check_page() == False:
-            print("The program couldn't find the page writed, can you try once more with the correct link?")
-            
-            
+            return False      
 
 
     def search_download_methods(self):
@@ -38,9 +26,9 @@ class Page:
         # check conection status:
         ## Testando, o que tiver de ocorrer ficar no que está certo, o que der errado ir para o False
         if self.check_page():
-            return 'Deu certo'
+            return 'Deu certo' # TO-DO: Continuar as operações aqui
         elif self.check_page() == False:
-            return f'Deu errado na função {inspect.currentframe().f_code.co_name}() da classe {self.__class__.__name__}'
+            return f'Deu errado na função {inspect.currentframe().f_code.co_name}() da classe {self.__class__.__name__}' # TO-DO: Pedir para ele colocar o link correto
 
         
 
