@@ -7,7 +7,7 @@ class Page:
         self.link = link 
         self.request = None  
 
-    def check_page(self):
+    def check_page(self): # See if the code can reach the page
         try:
             self.request = requests.get(self.link, timeout=5)  # try acess
             self.request.raise_for_status()  # check status
@@ -19,26 +19,28 @@ class Page:
                   f'\n{err}')
             return False      
 
-    def search_download_methods(self):
+    def search_download_methods(self): # Show the downloads avaible in archive
         download_section = self.soup.find("section", class_="boxy item-download-options")
 
         if download_section:
             links = download_section.find_all("a", class_="format-summary download-pill")
 
             # Take the download itens
-            hrefs = ["https://archive.org" + link["href"] for link in links]
+            hrefs = []
+            for link in links:
+                href = "https://archive.org" + link["href"]
+                hrefs.append(href)
 
-            return hrefs  
+            return hrefs
         else:
             print("Download Section not found.")
             return None  # Grant that somethings is returned
 
     def download_link(self):
         if self.check_page():
-            return self.search_download_methods()  # Está chamando o search_download_methods()
+            return self.search_download_methods() 
         elif self.check_page() == False:
-            return f'Deu errado na função {inspect.currentframe().f_code.co_name}() da classe {self.__class__.__name__}'
+            print(f"Couldn't reach the download methods")
+            return None
 
-# Teste:
-page = Page('https://archive.org/details/AlamutVladimirBartol').download_link()
-print(page)
+
