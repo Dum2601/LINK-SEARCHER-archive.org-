@@ -30,7 +30,7 @@ class Page:
         ## Testando, o que tiver de ocorrer ficar no que está certo (ir chamando as funções), o que der errado ir para o False
         if self.check_page():
             # return 'Deu certo' # TO-DO: Continuar as operações aqui
-            return self.search_download_methods() # Está chamando o search_download_methods() (teste)
+            return self.search_download_methods() # Está chamando o search_download_methods() TESTE
         elif self.check_page() == False:
             return f'Deu errado na função {inspect.currentframe().f_code.co_name}() da classe {self.__class__.__name__}' # TO-DO: Pedir para ele colocar o link correto
 
