@@ -25,11 +25,13 @@ class Page:
 
         if download_section:
             links = download_section.find_all("a", href=True)
-            
+            index = 0
             for link in links:
                 href = link["href"]
                 text = link.get_text(strip=True)
-                print(f"{text} -> {href}")
+                print(f"{index}: {text} -> {href}\n")
+
+                index = index + 1
         else:
             print("Download Section not found.")
         
