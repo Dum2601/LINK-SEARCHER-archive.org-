@@ -1,7 +1,3 @@
-Claro! Aqui está o texto revisado com as alterações que você solicitou:
-
----
-
 ## **English**
 
 ### Portuguese below
