@@ -1,4 +1,7 @@
-**English** # Portuguese below
+**English** 
+# Portuguese below
+
+
 About this project
 Recently, I often had to download some files from archive.org and decided to put my recent studies into practice: I created a small script to make my task easier by generating the download links directly for the terminal.
 
@@ -50,6 +53,8 @@ Feel free to open issues or submit pull requests!
 ---
 
 (Português)
+
+
 Sobre este projeto
 Ultimamente, tenho precisado baixar alguns arquivos do archive.org e decidi pôr em prática meus estudos recentes: criei um pequeno script para facilitar minha tarefa, gerando os links de download diretamente no terminal.
 
