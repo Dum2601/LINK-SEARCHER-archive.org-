@@ -12,6 +12,7 @@ class Page:
             self.request = requests.get(self.link, timeout=5)  # try acess
             self.request.raise_for_status()  # check status
             print(f'Page acess OK: {self.request.status_code}')
+            self.soup = BeautifulSoup(self.request.text, 'html.parser')
             return True
         except requests.exceptions.RequestException as err:
             print('Error:',
@@ -20,7 +21,7 @@ class Page:
 
 
     def search_download_methods(self):
-        pass
+        return self.soup.title.text
         
         
 
@@ -28,7 +29,8 @@ class Page:
         # check conection status:
         ## Testando, o que tiver de ocorrer ficar no que está certo (ir chamando as funções), o que der errado ir para o False
         if self.check_page():
-            return 'Deu certo' # TO-DO: Continuar as operações aqui
+            # return 'Deu certo' # TO-DO: Continuar as operações aqui
+            return self.search_download_methods() # Está chamando o search_download_methods() (teste)
         elif self.check_page() == False:
             return f'Deu errado na função {inspect.currentframe().f_code.co_name}() da classe {self.__class__.__name__}' # TO-DO: Pedir para ele colocar o link correto
 
@@ -38,8 +40,8 @@ class Page:
 # Checa no check page, se der True, chamar a de procurar downloads, se der errado, chamar a que concerta o link
 
 
-# page = Page('https://archive.org/details/AlamutVladimirBartol').download_link() # Link correto
-page = Page('https://archive.org/details/AlamutVladim').download_link() # Link incorreto para testes de erro na devolução
+page = Page('https://archive.org/details/AlamutVladimirBartol').download_link() # Link correto
+# page = Page('https://archive.org/details/AlamutVladim').download_link() # Link incorreto para testes de erro na devolução
 
 
 print(page)
