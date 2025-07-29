@@ -1,5 +1,6 @@
 import requests
 import inspect
+from bs4 import BeautifulSoup
 
 class Page:
     def __init__(self, link):
@@ -19,12 +20,13 @@ class Page:
 
 
     def search_download_methods(self):
-        # Verifica as opções de download após a checagem
         pass
+        
+        
 
     def download_link(self):
         # check conection status:
-        ## Testando, o que tiver de ocorrer ficar no que está certo, o que der errado ir para o False
+        ## Testando, o que tiver de ocorrer ficar no que está certo (ir chamando as funções), o que der errado ir para o False
         if self.check_page():
             return 'Deu certo' # TO-DO: Continuar as operações aqui
         elif self.check_page() == False:
@@ -36,8 +38,8 @@ class Page:
 # Checa no check page, se der True, chamar a de procurar downloads, se der errado, chamar a que concerta o link
 
 
-page = Page('https://archive.org/details/AlamutVladimirBartol').download_link()
-# page = Page('https://archive.org/details/AlamutVladim').download_link()
+# page = Page('https://archive.org/details/AlamutVladimirBartol').download_link() # Link correto
+page = Page('https://archive.org/details/AlamutVladim').download_link() # Link incorreto para testes de erro na devolução
 
 
 print(page)
