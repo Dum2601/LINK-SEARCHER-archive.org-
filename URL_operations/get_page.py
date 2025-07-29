@@ -19,41 +19,26 @@ class Page:
                   f'\n{err}')
             return False      
 
-
     def search_download_methods(self):
         download_section = self.soup.find("section", class_="boxy item-download-options")
 
         if download_section:
-            links = download_section.find_all("a", href=True)
-            index = 0
-            for link in links:
-                href = link["href"]
-                text = link.get_text(strip=True)
-                print(f"{index}: {text} -> {href}\n")
+            links = download_section.find_all("a", class_="format-summary download-pill")
 
-                index = index + 1
+            # Take the download itens
+            hrefs = ["https://archive.org" + link["href"] for link in links]
+
+            return hrefs  
         else:
             print("Download Section not found.")
-        
-        
+            return None  # Grant that somethings is returned
 
     def download_link(self):
-        # check conection status:
-        ## Testando, o que tiver de ocorrer ficar no que está certo (ir chamando as funções), o que der errado ir para o False
         if self.check_page():
-            # return 'Deu certo' # TO-DO: Continuar as operações aqui
-            return self.search_download_methods() # Está chamando o search_download_methods() TESTE
+            return self.search_download_methods()  # Está chamando o search_download_methods()
         elif self.check_page() == False:
-            return f'Deu errado na função {inspect.currentframe().f_code.co_name}() da classe {self.__class__.__name__}' # TO-DO: Pedir para ele colocar o link correto
+            return f'Deu errado na função {inspect.currentframe().f_code.co_name}() da classe {self.__class__.__name__}'
 
-        
-
-
-# Checa no check page, se der True, chamar a de procurar downloads, se der errado, chamar a que concerta o link
-
-
-page = Page('https://archive.org/details/AlamutVladimirBartol').download_link() # Link correto
-# page = Page('https://archive.org/details/AlamutVladim').download_link() # Link incorreto para testes de erro na devolução
-
-
+# Teste:
+page = Page('https://archive.org/details/AlamutVladimirBartol').download_link()
 print(page)
