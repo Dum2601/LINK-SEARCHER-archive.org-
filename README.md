@@ -48,7 +48,7 @@ Planned improvements include:
 * Check the HTTP status code directly instead of relying on `raise_status` (see original documentation)
 * Add this validation to each method inside the `Page` class
 * Add a **Front-End**: remove the current terminal-only dependency in the future (maybe...)
-* **Transform the project into an API**
+* **Transform the project into an API** (In Progress...)
 
 Feel free to open issues or submit pull requests!
 
@@ -105,7 +105,7 @@ As próximas atualizações planejadas são:
 * Checar o status HTTP diretamente em vez de usar `raise_status` (ver a documentação original)
 * Adicionar essa verificação em cada método da classe `Page`
 * Adicionar um **Front-End**: remover a dependência atual de ser apenas via terminal (no futuro, talvez...)
-* **Transformar o projeto em uma API**
+* **Transformar o projeto em uma API** (Em andamento...)
 
 Sinta-se livre para abrir *issues* ou enviar *pull requests*!
 
