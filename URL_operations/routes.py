@@ -42,7 +42,7 @@ def health_check():
     return 'Funcionando'
 
 
-@routes_bp.route('/get_link_page', methods=['POST'])
+@routes_bp.route('/get_link_page', methods=['GET'])
 def get_page_link():
     data = request.get_json()
     if not data or 'link' not in data:
@@ -54,6 +54,3 @@ def get_page_link():
     return jsonify({"message": "Links obtained successfully", "links": download_links})
 
 
-@routes_bp.route('/list_links', methods=['GET'])
-def list_links():
-    return jsonify({"links": download_links})
